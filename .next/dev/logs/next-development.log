@@ -1,87 +1,122 @@
-{"timestamp":"00:00:00.871","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:00:26.701","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:03:07.296","source":"Server","level":"LOG","message":"✓ Compiled in 355ms"}
-{"timestamp":"00:07:12.074","source":"Server","level":"ERROR","message":"⨯ ./src/app/layout.tsx:3:1\nError: Module not found: Can't resolve './globals.css'\n  1 | import type { Metadata } from \"next\";\n  2 | import { Cormorant_Garamond, Manrope } from \"next/font/google\";\n> 3 | import \"./globals.css\";\n    | ^^^^^^^^^^^^^^^^^^^^^^^\n  4 |\n  5 | const display = Cormorant_Garamond({ subsets: [\"latin\"], variable: \"--font-d...\n  6 | const body = Manrope({ subsets: [\"latin\"], variable: \"--font-body\" });\n\n\n\nhttps://nextjs.org/docs/messages/module-not-found\n\n"}
-{"timestamp":"00:07:12.121","source":"Server","level":"ERROR","message":"⨯ ./src/app/layout.tsx:3:1\nError: Module not found: Can't resolve './globals.css'\n  1 | import type { Metadata } from \"next\";\n  2 | import { Cormorant_Garamond, Manrope } from \"next/font/google\";\n> 3 | import \"./globals.css\";\n    | ^^^^^^^^^^^^^^^^^^^^^^^\n  4 |\n  5 | const display = Cormorant_Garamond({ subsets: [\"latin\"], variable: \"--font-d...\n  6 | const body = Manrope({ subsets: [\"latin\"], variable: \"--font-body\" });\n\n\n\nhttps://nextjs.org/docs/messages/module-not-found\n\n"}
-{"timestamp":"00:07:12.126","source":"Server","level":"ERROR","message":"⨯ ./src/app/layout.tsx:3:1\nError: Module not found: Can't resolve './globals.css'\n  1 | import type { Metadata } from \"next\";\n  2 | import { Cormorant_Garamond, Manrope } from \"next/font/google\";\n> 3 | import \"./globals.css\";\n    | ^^^^^^^^^^^^^^^^^^^^^^^\n  4 |\n  5 | const display = Cormorant_Garamond({ subsets: [\"latin\"], variable: \"--font-d...\n  6 | const body = Manrope({ subsets: [\"latin\"], variable: \"--font-body\" });\n\n\n\nhttps://nextjs.org/docs/messages/module-not-found\n\n"}
-{"timestamp":"00:07:12.131","source":"Server","level":"ERROR","message":"⨯ ./src/app/layout.tsx:3:1\nError: Module not found: Can't resolve './globals.css'\n  1 | import type { Metadata } from \"next\";\n  2 | import { Cormorant_Garamond, Manrope } from \"next/font/google\";\n> 3 | import \"./globals.css\";\n    | ^^^^^^^^^^^^^^^^^^^^^^^\n  4 |\n  5 | const display = Cormorant_Garamond({ subsets: [\"latin\"], variable: \"--font-d...\n  6 | const body = Manrope({ subsets: [\"latin\"], variable: \"--font-body\" });\n\n\n\nhttps://nextjs.org/docs/messages/module-not-found\n\n"}
-{"timestamp":"00:07:12.135","source":"Server","level":"LOG","message":"✓ Compiled in 527ms"}
-{"timestamp":"00:10:43.064","source":"Server","level":"LOG","message":"✓ Compiled in 710ms"}
-{"timestamp":"00:11:06.571","source":"Server","level":"LOG","message":"✓ Compiled in 45ms"}
-{"timestamp":"00:11:31.541","source":"Server","level":"LOG","message":"✓ Compiled in 87ms"}
-{"timestamp":"00:14:47.044","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:14:49.315","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:14:49.373","source":"Browser","level":"WARN","message":"GSAP target .trace-line not found. https://gsap.com"}
-{"timestamp":"00:14:49.457","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target .trace-line not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:148:12)\\u001b[22m\""}
-{"timestamp":"00:14:49.457","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
-{"timestamp":"00:14:49.467","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:148:12)\\u001b[22m\""}
-{"timestamp":"00:14:49.467","source":"Browser","level":"WARN","message":"GSAP target .identity-symbol not found. https://gsap.com"}
-{"timestamp":"00:14:49.470","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target .identity-symbol not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:149:12)\\u001b[22m\""}
-{"timestamp":"00:14:49.470","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
-{"timestamp":"00:14:49.472","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:149:12)\\u001b[22m\""}
-{"timestamp":"00:14:49.472","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
-{"timestamp":"00:14:49.475","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\""}
-{"timestamp":"00:14:50.237","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
-{"timestamp":"00:14:50.237","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\""}
-{"timestamp":"00:14:50.566","source":"Browser","level":"WARN","message":"Image with src \"/brand/lotus/lotus-reference-pink.png\" was detected as the Largest Contentful Paint (LCP). Please add the `loading=\"eager\"` property if this image is above the fold.\nRead more: https://nextjs.org/docs/app/api-reference/components/image#loading"}
-{"timestamp":"00:14:50.607","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mImage with src \\\"/brand/lotus/lotus-reference-pink.png\\\" was detected as the Largest Contentful Paint (LCP). Please add the `loading=\\\"eager\\\"` property if this image is above the fold.\\nRead more: https://nextjs.org/docs/app/api-reference/components/image#loading\\u001b[39m\""}
-{"timestamp":"00:14:51.447","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:14:53.617","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:14:54.676","source":"Browser","level":"WARN","message":"Image with src \"/brand/packaging/packaging-hero.png\" was detected as the Largest Contentful Paint (LCP). Please add the `loading=\"eager\"` property if this image is above the fold.\nRead more: https://nextjs.org/docs/app/api-reference/components/image#loading"}
-{"timestamp":"00:14:54.676","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mImage with src \\\"/brand/packaging/packaging-hero.png\\\" was detected as the Largest Contentful Paint (LCP). Please add the `loading=\\\"eager\\\"` property if this image is above the fold.\\nRead more: https://nextjs.org/docs/app/api-reference/components/image#loading\\u001b[39m\""}
-{"timestamp":"00:15:27.599","source":"Browser","level":"ERROR","message":"./src/app/layout.tsx:3:1\nError: Module not found: Can't resolve './globals.css'\n  1 | import type { Metadata } from \"next\";\n  2 | import { Cormorant_Garamond, Manrope } from \"next/font/google\";\n> 3 | import \"./globals.css\";\n    | ^^^^^^^^^^^^^^^^^^^^^^^\n  4 |\n  5 | const display = Cormorant_Garamond({ subsets: [\"latin\"], variable: \"--font-d...\n  6 | const body = Manrope({ subsets: [\"latin\"], variable: \"--font-body\" });\n\nhttps://nextjs.org/docs/messages/module-not-found "}
-{"timestamp":"00:15:27.601","source":"Server","level":"ERROR","message":"[browser] \"./src/app/layout.tsx:3:1\\nError: Module not found: Can't resolve './globals.css'\\n  1 | import type { Metadata } from \\\"next\\\";\\n  2 | import { Cormorant_Garamond, Manrope } from \\\"next/font/google\\\";\\n> 3 | import \\\"./globals.css\\\";\\n    | ^^^^^^^^^^^^^^^^^^^^^^^\\n  4 |\\n  5 | const display = Cormorant_Garamond({ subsets: [\\\"latin\\\"], variable: \\\"--font-d...\\n  6 | const body = Manrope({ subsets: [\\\"latin\\\"], variable: \\\"--font-body\\\" });\\n\\nhttps://nextjs.org/docs/messages/module-not-found\" \"\""}
-{"timestamp":"00:16:52.432","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:16:54.325","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:16:54.378","source":"Browser","level":"WARN","message":"GSAP target .trace-line not found. https://gsap.com"}
-{"timestamp":"00:16:54.379","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target .trace-line not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:148:12)\\u001b[22m\""}
-{"timestamp":"00:16:54.379","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
-{"timestamp":"00:16:54.379","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:148:12)\\u001b[22m\""}
-{"timestamp":"00:16:54.379","source":"Browser","level":"WARN","message":"GSAP target .identity-symbol not found. https://gsap.com"}
-{"timestamp":"00:16:54.379","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target .identity-symbol not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:149:12)\\u001b[22m\""}
-{"timestamp":"00:16:54.379","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
-{"timestamp":"00:16:54.379","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:149:12)\\u001b[22m\""}
-{"timestamp":"00:16:54.379","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
-{"timestamp":"00:16:54.379","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\""}
-{"timestamp":"00:16:55.194","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
-{"timestamp":"00:16:55.194","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\""}
-{"timestamp":"00:16:55.194","source":"Browser","level":"WARN","message":"Image with src \"/brand/lotus/lotus-reference-pink.png\" was detected as the Largest Contentful Paint (LCP). Please add the `loading=\"eager\"` property if this image is above the fold.\nRead more: https://nextjs.org/docs/app/api-reference/components/image#loading"}
-{"timestamp":"00:16:55.194","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mImage with src \\\"/brand/lotus/lotus-reference-pink.png\\\" was detected as the Largest Contentful Paint (LCP). Please add the `loading=\\\"eager\\\"` property if this image is above the fold.\\nRead more: https://nextjs.org/docs/app/api-reference/components/image#loading\\u001b[39m\""}
-{"timestamp":"00:16:56.099","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:18:08.966","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:18:29.172","source":"Browser","level":"WARN","message":"GSAP target .trace-line not found. https://gsap.com"}
-{"timestamp":"00:18:29.175","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target .trace-line not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:148:12)\\u001b[22m\""}
-{"timestamp":"00:18:29.175","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
-{"timestamp":"00:18:29.176","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:148:12)\\u001b[22m\""}
-{"timestamp":"00:18:29.176","source":"Browser","level":"WARN","message":"GSAP target .identity-symbol not found. https://gsap.com"}
-{"timestamp":"00:18:29.176","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target .identity-symbol not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:149:12)\\u001b[22m\""}
-{"timestamp":"00:18:29.176","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
-{"timestamp":"00:18:29.177","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:149:12)\\u001b[22m\""}
-{"timestamp":"00:18:29.177","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
-{"timestamp":"00:18:29.177","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\""}
-{"timestamp":"00:18:29.969","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
-{"timestamp":"00:18:29.969","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\""}
-{"timestamp":"00:19:17.417","source":"Browser","level":"WARN","message":"GSAP target .trace-line not found. https://gsap.com"}
-{"timestamp":"00:19:17.418","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target .trace-line not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:148:12)\\u001b[22m\""}
-{"timestamp":"00:19:17.422","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
-{"timestamp":"00:19:17.423","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:148:12)\\u001b[22m\""}
-{"timestamp":"00:19:17.423","source":"Browser","level":"WARN","message":"GSAP target .identity-symbol not found. https://gsap.com"}
-{"timestamp":"00:19:17.424","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target .identity-symbol not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:149:12)\\u001b[22m\""}
-{"timestamp":"00:19:17.424","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
-{"timestamp":"00:19:17.424","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:149:12)\\u001b[22m\""}
-{"timestamp":"00:19:17.429","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
-{"timestamp":"00:19:17.430","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\""}
-{"timestamp":"00:19:17.629","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
-{"timestamp":"00:19:17.674","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(<anonymous>)\\u001b[22m\""}
-{"timestamp":"00:19:47.019","source":"Browser","level":"WARN","message":"GSAP target .trace-line not found. https://gsap.com"}
-{"timestamp":"00:19:47.020","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target .trace-line not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:148:12)\\u001b[22m\""}
-{"timestamp":"00:19:47.021","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
-{"timestamp":"00:19:47.022","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:148:12)\\u001b[22m\""}
-{"timestamp":"00:19:47.022","source":"Browser","level":"WARN","message":"GSAP target .identity-symbol not found. https://gsap.com"}
-{"timestamp":"00:19:47.023","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target .identity-symbol not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:149:12)\\u001b[22m\""}
-{"timestamp":"00:19:47.023","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
-{"timestamp":"00:19:47.023","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:149:12)\\u001b[22m\""}
-{"timestamp":"00:19:47.023","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
-{"timestamp":"00:19:47.023","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\""}
-{"timestamp":"00:19:47.810","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
-{"timestamp":"00:19:47.811","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\""}
+{"timestamp":"00:00:00.654","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:04.868","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:01:19.546","source":"Browser","level":"WARN","message":"GSAP target .trace-line not found. https://gsap.com"}
+{"timestamp":"00:01:19.606","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target .trace-line not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:148:12)\\u001b[22m\""}
+{"timestamp":"00:01:19.606","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:01:19.610","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:148:12)\\u001b[22m\""}
+{"timestamp":"00:01:19.610","source":"Browser","level":"WARN","message":"GSAP target .identity-symbol not found. https://gsap.com"}
+{"timestamp":"00:01:19.612","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target .identity-symbol not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:149:12)\\u001b[22m\""}
+{"timestamp":"00:01:19.612","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:01:19.616","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:149:12)\\u001b[22m\""}
+{"timestamp":"00:01:19.616","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:01:19.618","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\""}
+{"timestamp":"00:01:20.342","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:01:20.343","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\""}
+{"timestamp":"00:02:37.043","source":"Browser","level":"WARN","message":"GSAP target .trace-line not found. https://gsap.com"}
+{"timestamp":"00:02:37.043","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target .trace-line not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:148:12)\\u001b[22m\""}
+{"timestamp":"00:02:37.044","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:02:37.044","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:148:12)\\u001b[22m\""}
+{"timestamp":"00:02:37.044","source":"Browser","level":"WARN","message":"GSAP target .identity-symbol not found. https://gsap.com"}
+{"timestamp":"00:02:37.044","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target .identity-symbol not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:149:12)\\u001b[22m\""}
+{"timestamp":"00:02:37.045","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:02:37.045","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:149:12)\\u001b[22m\""}
+{"timestamp":"00:02:37.045","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:02:37.045","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\""}
+{"timestamp":"00:02:37.300","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:02:37.332","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(<anonymous>)\\u001b[22m\""}
+{"timestamp":"00:06:08.970","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:14:13.670","source":"Server","level":"LOG","message":"✓ Compiled in 97ms"}
+{"timestamp":"00:14:22.061","source":"Server","level":"LOG","message":"✓ Compiled in 75ms"}
+{"timestamp":"00:14:26.399","source":"Server","level":"LOG","message":"✓ Compiled in 37ms"}
+{"timestamp":"00:18:42.201","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:22:44.291","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:23:32.232","source":"Browser","level":"WARN","message":"GSAP target .trace-line not found. https://gsap.com"}
+{"timestamp":"00:23:32.283","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target .trace-line not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:148:12)\\u001b[22m\""}
+{"timestamp":"00:23:32.283","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:23:32.289","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:148:12)\\u001b[22m\""}
+{"timestamp":"00:23:32.289","source":"Browser","level":"WARN","message":"GSAP target .identity-symbol not found. https://gsap.com"}
+{"timestamp":"00:23:32.292","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target .identity-symbol not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:149:12)\\u001b[22m\""}
+{"timestamp":"00:23:32.292","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:23:32.296","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:149:12)\\u001b[22m\""}
+{"timestamp":"00:23:32.296","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:23:32.296","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\""}
+{"timestamp":"00:23:33.030","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:23:33.030","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\""}
+{"timestamp":"00:23:33.031","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:23:33.031","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\""}
+{"timestamp":"00:23:50.953","source":"Server","level":"LOG","message":"✓ Compiled in 148ms"}
+{"timestamp":"00:24:22.324","source":"Server","level":"LOG","message":"✓ Compiled in 169ms"}
+{"timestamp":"00:24:29.969","source":"Server","level":"LOG","message":"✓ Compiled in 90ms"}
+{"timestamp":"00:24:37.251","source":"Browser","level":"WARN","message":"GSAP target .trace-line not found. https://gsap.com"}
+{"timestamp":"00:24:37.268","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target .trace-line not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:168:12)\\u001b[22m\""}
+{"timestamp":"00:24:37.268","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:24:37.273","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:168:12)\\u001b[22m\""}
+{"timestamp":"00:24:37.273","source":"Browser","level":"WARN","message":"GSAP target .identity-symbol not found. https://gsap.com"}
+{"timestamp":"00:24:37.279","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target .identity-symbol not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:169:12)\\u001b[22m\""}
+{"timestamp":"00:24:37.279","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:24:37.282","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:169:12)\\u001b[22m\""}
+{"timestamp":"00:24:37.282","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:24:37.282","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\""}
+{"timestamp":"00:24:37.424","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:24:37.442","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(<anonymous>)\\u001b[22m\""}
+{"timestamp":"00:29:25.302","source":"Server","level":"LOG","message":"✓ Compiled in 208ms"}
+{"timestamp":"00:30:10.510","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:30:57.119","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:31:54.599","source":"Browser","level":"WARN","message":"GSAP target .trace-line not found. https://gsap.com"}
+{"timestamp":"00:31:54.681","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target .trace-line not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:168:12)\\u001b[22m\""}
+{"timestamp":"00:31:54.682","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:31:54.687","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:168:12)\\u001b[22m\""}
+{"timestamp":"00:31:54.687","source":"Browser","level":"WARN","message":"GSAP target .identity-symbol not found. https://gsap.com"}
+{"timestamp":"00:31:54.691","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target .identity-symbol not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:169:12)\\u001b[22m\""}
+{"timestamp":"00:31:54.691","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:31:54.693","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:169:12)\\u001b[22m\""}
+{"timestamp":"00:31:54.693","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:31:54.693","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\""}
+{"timestamp":"00:31:55.391","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:31:55.391","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\""}
+{"timestamp":"00:31:55.392","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:31:55.392","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\""}
+{"timestamp":"00:32:15.855","source":"Browser","level":"WARN","message":"GSAP target .trace-line not found. https://gsap.com"}
+{"timestamp":"00:32:15.856","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target .trace-line not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:168:12)\\u001b[22m\""}
+{"timestamp":"00:32:15.856","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:32:15.856","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:168:12)\\u001b[22m\""}
+{"timestamp":"00:32:15.857","source":"Browser","level":"WARN","message":"GSAP target .identity-symbol not found. https://gsap.com"}
+{"timestamp":"00:32:15.857","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target .identity-symbol not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:169:12)\\u001b[22m\""}
+{"timestamp":"00:32:15.857","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:32:15.857","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:169:12)\\u001b[22m\""}
+{"timestamp":"00:32:15.866","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:32:15.866","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\""}
+{"timestamp":"00:32:16.337","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:32:16.359","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(<anonymous>)\\u001b[22m\""}
+{"timestamp":"00:34:32.798","source":"Server","level":"LOG","message":"✓ Compiled in 208ms"}
+{"timestamp":"00:35:02.380","source":"Server","level":"LOG","message":"✓ Compiled in 99ms"}
+{"timestamp":"00:35:21.001","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload due to a runtime error."}
+{"timestamp":"00:35:21.006","source":"Server","level":"LOG","message":"✓ Compiled in 192ms"}
+{"timestamp":"00:35:21.222","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:35:42.633","source":"Server","level":"LOG","message":"✓ Compiled in 124ms"}
+{"timestamp":"00:35:57.451","source":"Server","level":"LOG","message":"✓ Compiled in 53ms"}
+{"timestamp":"00:37:53.886","source":"Browser","level":"WARN","message":"GSAP target .trace-line not found. https://gsap.com"}
+{"timestamp":"00:37:53.968","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target .trace-line not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:166:12)\\u001b[22m\""}
+{"timestamp":"00:37:53.969","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:37:53.973","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:166:12)\\u001b[22m\""}
+{"timestamp":"00:37:53.973","source":"Browser","level":"WARN","message":"GSAP target .identity-symbol not found. https://gsap.com"}
+{"timestamp":"00:37:53.975","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target .identity-symbol not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:167:12)\\u001b[22m\""}
+{"timestamp":"00:37:53.975","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:37:53.977","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:167:12)\\u001b[22m\""}
+{"timestamp":"00:37:53.977","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:37:53.977","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\""}
+{"timestamp":"00:37:54.685","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:37:54.686","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\""}
+{"timestamp":"00:38:02.005","source":"Browser","level":"WARN","message":"GSAP target .trace-line not found. https://gsap.com"}
+{"timestamp":"00:38:02.006","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target .trace-line not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:166:12)\\u001b[22m\""}
+{"timestamp":"00:38:02.006","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:38:02.006","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:166:12)\\u001b[22m\""}
+{"timestamp":"00:38:02.006","source":"Browser","level":"WARN","message":"GSAP target .identity-symbol not found. https://gsap.com"}
+{"timestamp":"00:38:02.006","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target .identity-symbol not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:167:12)\\u001b[22m\""}
+{"timestamp":"00:38:02.006","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:38:02.007","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(src/components/presentation/BrandDeck.tsx:167:12)\\u001b[22m\""}
+{"timestamp":"00:38:02.018","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:38:02.018","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\""}
+{"timestamp":"00:38:02.220","source":"Browser","level":"WARN","message":"GSAP target  not found. https://gsap.com"}
+{"timestamp":"00:38:02.235","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mGSAP target  not found. https://gsap.com\\u001b[39m\" \"\\u001b[2m(<anonymous>)\\u001b[22m\""}
+{"timestamp":"00:38:40.641","source":"Server","level":"LOG","message":"✓ Compiled in 141ms"}

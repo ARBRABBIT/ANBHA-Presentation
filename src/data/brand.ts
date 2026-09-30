@@ -1,9 +1,3 @@
-export const brand = {
-  name: "ANBHA",
-  tagline: "Pure Silver. Endless Stories",
-  subtitle: "Brand Identity Presentation",
-} as const;
-
 export const brandColors = [
   {
     name: "Pure White",
@@ -30,20 +24,4 @@ export const meanings = [
   ["Lakshmi inspiration", "Prosperity and abundance"],
   ["Elegant form", "Feminine, premium, timeless"],
   ["Minimal structure", "Clean, versatile, memorable"],
-] as const;
-
-export const misuse = [
-  "Do not stretch",
-  "Do not rotate",
-  "Do not recolor",
-  "Do not add effects",
-  "Avoid visual clutter",
-  "Keep proportions",
-] as const;
-
-export const chapters = [
-  { id: "story", number: "01", label: "The Story" },
-  { id: "identity", number: "02", label: "The Identity" },
-  { id: "guidelines", number: "03", label: "Guidelines" },
-  { id: "experience", number: "04", label: "Experience" },
 ] as const;

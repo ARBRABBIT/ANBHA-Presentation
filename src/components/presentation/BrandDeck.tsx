@@ -2,24 +2,25 @@
 
 import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import gsap from "gsap";
 import { ArrowLeft, ArrowRight, Heart, Menu, Search, ShoppingBag, X } from "lucide-react";
 import { useCallback, useEffect, useRef, useState, type ReactNode, type TouchEvent } from "react";
 import { brandColors, meanings } from "@/data/brand";
-import { gsap } from "@/lib/gsap";
+import LotusGeometry from "./LotusGeometry";
 
 const TOTAL_SLIDES = 16;
 
 type LogoAssetProps = {
-  kind?: "symbol" | "wordmark";
+  kind?: "symbol" | "lockup";
   light?: boolean;
   className?: string;
   alt?: string;
 };
 
-function LogoAsset({ kind = "wordmark", light = false, className = "", alt = "ANBHA logo" }: LogoAssetProps) {
+function LogoAsset({ kind = "lockup", light = false, className = "", alt = "ANBHA logo" }: LogoAssetProps) {
   const filename = kind === "symbol"
     ? light ? "logo-white.svg" : "logo-black.svg"
-    : light ? "wordmark-white.svg" : "wordmark-black.svg";
+    : light ? "whole-logo-white.svg" : "whole-logo.svg";
   return <img src={`/brand/logo/${filename}`} alt={alt} className={className} draggable={false} />;
 }
 
@@ -36,11 +37,28 @@ function SlideTitle({ children, className = "" }: { children: ReactNode; classNa
 }
 
 function CoverSlide() {
-  return <Slide className="cover-slide"><div className="cover-ring ring-one" /><div className="cover-ring ring-two" /><div className="cover-center"><LogoAsset kind="symbol" className="cover-symbol" /><LogoAsset className="cover-wordmark" /><p>Pure Silver. Endless Stories</p><span>Brand Identity Presentation</span></div><div className="corner-note">ANBHA / 2026</div></Slide>;
+  return <Slide className="cover-slide"><div className="cover-ring ring-one" /><div className="cover-ring ring-two" /><div className="cover-center"><LogoAsset className="cover-wordmark" /><span>Brand Identity Presentation</span></div><div className="corner-note">ANBHA / 2026</div></Slide>;
 }
 
 function IntroductionSlide() {
-  return <Slide><div className="slide-pad intro-layout"><Kicker number="01">The Story</Kicker><div className="intro-statement"><p>Every jewellery brand<br />tells a story.</p><span>ANBHA begins with purity, meaning,<br />and timeless elegance.</span></div><LogoAsset kind="symbol" className="intro-watermark" alt="" /></div></Slide>;
+  return (
+    <Slide>
+      <div className="slide-pad intro-grid">
+        <div className="intro-copy">
+          <Kicker number="01">The Story</Kicker>
+          <h2 className="intro-heading">
+            Every jewellery brand<br />tells a story.
+          </h2>
+          <p className="intro-subtext">
+            ANBHA begins with purity, meaning,<br />and timeless elegance.
+          </p>
+        </div>
+        <div className="intro-stage">
+          <LotusGeometry />
+        </div>
+      </div>
+    </Slide>
+  );
 }
 
 function InspirationSlide() {
@@ -52,7 +70,7 @@ function TransformationSlide() {
 }
 
 function LogoRevealSlide() {
-  return <Slide dark><div className="slide-pad reveal-layout"><Kicker number="05" light>The ANBHA Logo</Kicker><div className="logo-specimen"><div><span>Symbol</span><LogoAsset kind="symbol" light className="spec-symbol" /></div><i /><div><span>Wordmark</span><LogoAsset light className="spec-wordmark" /></div></div><p className="reveal-copy">A refined identity inspired by tradition,<br />designed for a modern silver jewellery brand.</p></div></Slide>;
+  return <Slide dark><div className="slide-pad reveal-layout"><Kicker number="05" light>The ANBHA Logo</Kicker><div className="logo-specimen"><div><span>Symbol</span><LogoAsset kind="symbol" light className="spec-symbol" /></div><i /><div><span>Complete lockup</span><LogoAsset light className="spec-wordmark" /></div></div><p className="reveal-copy">A refined identity inspired by tradition,<br />designed for a modern silver jewellery brand.</p></div></Slide>;
 }
 
 function MeaningSlide() {
@@ -68,7 +86,7 @@ function TypographySlide() {
 }
 
 function UsageSlide() {
-  return <Slide><div className="slide-pad usage-layout"><div><Kicker number="09">Logo Usage Guidelines</Kicker><SlideTitle>Space to<br /><em>be seen.</em></SlideTitle><p className="body-copy">Preserve clear space and consistent proportions across every touchpoint.</p></div><div className="clearspace-demo"><div className="measure-line measure-x">1×</div><div className="measure-line measure-y">1×</div><LogoAsset className="usage-wordmark" /><div className="clear-box" /></div><div className="usage-row"><div><span>Primary</span><LogoAsset className="mini-wordmark" /></div><div className="dark-use"><span>Reversed</span><LogoAsset light className="mini-wordmark" /></div><div><span>Minimum symbol / 24 px</span><LogoAsset kind="symbol" className="mini-symbol" /></div></div></div></Slide>;
+  return <Slide><div className="slide-pad usage-layout"><div><Kicker number="09">Logo Usage Guidelines</Kicker><SlideTitle>Space to<br /><em>be seen.</em></SlideTitle><p className="body-copy">Preserve clear space and consistent proportions across every touchpoint.</p></div><div className="clearspace-demo"><div className="measure-line measure-x">1×</div><div className="measure-line measure-y">1×</div><LogoAsset className="usage-wordmark" /><div className="clear-box" /></div><div className="usage-row"><div><span>Primary lockup</span><LogoAsset className="mini-wordmark" /></div><div className="dark-use"><span>Reversed symbol</span><LogoAsset kind="symbol" light className="mini-symbol" /></div><div><span>Minimum symbol / 24 px</span><LogoAsset kind="symbol" className="mini-symbol" /></div></div></div></Slide>;
 }
 
 const misuseItems = ["Stretch", "Recolor", "Rotate", "Add effects", "Use on clutter", "Distort proportions"];
@@ -82,7 +100,7 @@ function PackagingSlide() {
 }
 
 function CollateralSlide() {
-  return <Slide dark><div className="slide-pad collateral-layout"><div><Kicker number="12" light>Brand Applications</Kicker><SlideTitle>Every detail<br /><em>belongs.</em></SlideTitle></div><div className="collateral-stage"><article className="card-auth"><span>Certificate of Authenticity</span><LogoAsset light className="card-logo" /><small>925 / PURE SILVER</small></article><article className="card-care"><span>Jewellery Care</span><LogoAsset kind="symbol" className="care-symbol" /><p>Keep dry.<br />Store softly.<br />Wear often.</p></article><article className="card-thanks"><span>A note from ANBHA</span><p>Thank you for making us<br />part of your story.</p><LogoAsset kind="symbol" className="thanks-symbol" /></article></div></div></Slide>;
+  return <Slide dark><div className="slide-pad collateral-layout"><div><Kicker number="12" light>Brand Applications</Kicker><SlideTitle>Every detail<br /><em>belongs.</em></SlideTitle></div><div className="collateral-stage"><article className="card-auth"><span>Certificate of Authenticity</span><LogoAsset kind="symbol" light className="card-logo" /><small>925 / PURE SILVER</small></article><article className="card-care"><span>Jewellery Care</span><LogoAsset kind="symbol" className="care-symbol" /><p>Keep dry.<br />Store softly.<br />Wear often.</p></article><article className="card-thanks"><span>A note from ANBHA</span><p>Thank you for making us<br />part of your story.</p><LogoAsset kind="symbol" className="thanks-symbol" /></article></div></div></Slide>;
 }
 
 function WebsiteSlide() {
@@ -102,7 +120,7 @@ function FeelSlide() {
 }
 
 function ClosingSlide() {
-  return <Slide dark className="closing-slide"><div className="closing-copy"><p>Inspired by the lotus of Lakshmi, ANBHA is more than a logo—it is a symbol of purity, prosperity, and timeless beauty.</p><i/><LogoAsset light className="closing-logo"/><span>Pure Silver. Endless Stories</span></div><small>Inspired by purity · Designed for stories that last</small></Slide>;
+  return <Slide dark className="closing-slide"><div className="closing-copy"><p>Inspired by the lotus of Lakshmi, ANBHA is more than a logo—it is a symbol of purity, prosperity, and timeless beauty.</p><i/><LogoAsset light className="closing-logo"/></div><small>Inspired by purity · Designed for stories that last</small></Slide>;
 }
 
 const slides = [CoverSlide, IntroductionSlide, InspirationSlide, TransformationSlide, LogoRevealSlide, MeaningSlide, ColorSlide, TypographySlide, UsageSlide, MisuseSlide, PackagingSlide, CollateralSlide, WebsiteSlide, MobileSlide, FeelSlide, ClosingSlide];
