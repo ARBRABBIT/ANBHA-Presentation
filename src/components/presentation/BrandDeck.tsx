@@ -5,22 +5,33 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import gsap from "gsap";
 import { ArrowLeft, ArrowRight, Heart, Menu, Search, ShoppingBag, X } from "lucide-react";
 import { useCallback, useEffect, useRef, useState, type ReactNode, type TouchEvent } from "react";
-import { brandColors, meanings } from "@/data/brand";
+import { brandColors } from "@/data/brand";
 import LotusGeometry from "./LotusGeometry";
 
 const TOTAL_SLIDES = 16;
 
 type LogoAssetProps = {
-  kind?: "symbol" | "lockup";
+  kind?: "symbol" | "wordmark" | "tagline" | "lockup";
   light?: boolean;
+  color?: "white" | "black" | "green";
   className?: string;
   alt?: string;
 };
 
-function LogoAsset({ kind = "lockup", light = false, className = "", alt = "ANBHA logo" }: LogoAssetProps) {
-  const filename = kind === "symbol"
-    ? light ? "logo-white.svg" : "logo-black.svg"
-    : light ? "whole-logo-white.svg" : "whole-logo.svg";
+function LogoAsset({ kind = "lockup", light = false, color, className = "", alt = "ANBHA logo" }: LogoAssetProps) {
+  const chosenColor = color || (light ? "white" : "black");
+  let filename = "";
+
+  if (kind === "symbol") {
+    filename = chosenColor === "white" ? "logo-white.svg" : chosenColor === "green" ? "logo-green.svg" : "logo-black.svg";
+  } else if (kind === "wordmark") {
+    filename = chosenColor === "white" ? "word-logo-white.svg" : chosenColor === "green" ? "word-logo-green.svg" : "word-logo-black.svg";
+  } else if (kind === "tagline") {
+    filename = chosenColor === "white" ? "tagline-white.svg" : chosenColor === "green" ? "tagline-green.svg" : "tagline-black.svg";
+  } else {
+    filename = chosenColor === "white" ? "whole-logo-white.svg" : chosenColor === "green" ? "whole-logo-green.svg" : "whole-logo.svg";
+  }
+
   return <img src={`/brand/logo/${filename}`} alt={alt} className={className} draggable={false} />;
 }
 
@@ -62,49 +73,339 @@ function IntroductionSlide() {
 }
 
 function InspirationSlide() {
-  return <Slide><div className="split-slide"><div className="split-copy"><Kicker number="03">The Inspiration</Kicker><SlideTitle>Rooted in<br /><em>purity.</em></SlideTitle><p className="body-copy">The ANBHA identity is inspired by the lotus associated with Goddess Lakshmi—a symbol of purity, grace, prosperity, and divine beauty.</p><div className="meaning-strip"><span>Purity</span><span>Grace</span><span>Prosperity</span></div></div><div className="split-image"><Image src="/brand/lotus/lotus-reference-pink.png" alt="Pink lotus reference associated with Goddess Lakshmi" fill sizes="50vw" className="object-cover" priority /><span className="image-caption">01 / Natural reference — pink lotus</span></div></div></Slide>;
+  return (
+    <Slide>
+      <div className="split-slide">
+        <div className="split-copy">
+          <Kicker number="03">The Inspiration</Kicker>
+          <SlideTitle>
+            Rooted in<br /><em>purity.</em>
+          </SlideTitle>
+          <p className="body-copy">
+            The ANBHA identity is inspired by the lotus associated with Goddess Lakshmi—a symbol of purity, grace, prosperity, and divine beauty.
+          </p>
+          <div className="meaning-strip">
+            <span>Purity</span>
+            <span>Grace</span>
+            <span>Prosperity</span>
+          </div>
+        </div>
+        <div className="split-image">
+          <Image
+            src="/brand/lotus/lotus-inspiration-8k.png"
+            alt="Pink lotus reference associated with Goddess Lakshmi"
+            fill
+            sizes="50vw"
+            className="object-cover"
+            priority
+          />
+          <span className="image-caption">01 / Natural reference — pink lotus</span>
+        </div>
+      </div>
+    </Slide>
+  );
 }
 
 function TransformationSlide() {
-  return <Slide sage><div className="slide-pad transform-slide"><Kicker number="04">From symbol to identity</Kicker><div className="comparison-grid"><figure className="reference-panel"><Image src="/brand/lotus/lotus-reference-pink.png" alt="Pink lotus reference" fill sizes="45vw" className="object-cover" /><figcaption>Reference / Organic form</figcaption><svg className="trace-overlay" viewBox="0 0 700 560" fill="none" aria-hidden="true"><path className="trace-line" d="M350 500C326 340 329 208 350 56c21 152 24 284 0 444Z"/><path className="trace-line" d="M342 470C222 416 131 322 82 188c135 38 226 132 260 282Z"/><path className="trace-line" d="M358 470c120-54 211-148 260-282-135 38-226 132-260 282Z"/></svg></figure><div className="refine-axis"><span>Trace</span><i /><span>Refine</span></div><figure className="identity-panel"><div className="identity-gridlines" /><LogoAsset kind="symbol" className="identity-symbol" /><figcaption>Identity / Simplified form</figcaption></figure></div><div className="comparison-copy"><h2>From lotus<br />to <em>ANBHA.</em></h2><p>We studied the flower’s organic form and refined it into a clean, timeless symbol.</p></div></div></Slide>;
+  return (
+    <Slide sage>
+      <div className="slide-pad transform-slide">
+        <div className="transform-header">
+          <div className="transform-heading-group">
+            <Kicker number="04">From symbol to identity</Kicker>
+            <h2 className="transform-title">
+              From lotus<br />to <em>ANBHA.</em>
+            </h2>
+          </div>
+          <p className="transform-subtext">
+            We studied the flower’s organic form and refined it into a clean, timeless symbol.
+          </p>
+        </div>
+        <div className="comparison-grid">
+          <figure className="reference-panel">
+            <Image
+              src="/brand/lotus/lotus-reference-pink.png"
+              alt="Pink lotus reference"
+              fill
+              sizes="45vw"
+              className="object-cover"
+            />
+            <figcaption>Reference / Organic form</figcaption>
+            <svg
+              className="trace-overlay"
+              viewBox="0 0 700 560"
+              fill="none"
+              aria-hidden="true"
+            >
+              <defs>
+                <filter
+                  id="pencil-sketch"
+                  x="-15%"
+                  y="-15%"
+                  width="130%"
+                  height="130%"
+                >
+                  <feTurbulence
+                    type="fractalNoise"
+                    baseFrequency="0.045 0.09"
+                    numOctaves={3}
+                    result="noise"
+                  />
+                  <feDisplacementMap
+                    in="SourceGraphic"
+                    in2="noise"
+                    scale={2.4}
+                    xChannelSelector="R"
+                    yChannelSelector="G"
+                  />
+                </filter>
+              </defs>
+              <g className="trace-sketch" transform="translate(-24, 0)">
+                {/* Construction gesture lines */}
+                <path
+                  className="trace-line-guide"
+                  d="M350 42 C349.5 160 350.5 340 350 518"
+                />
+                <path
+                  className="trace-line-guide"
+                  d="M175 240 C235 130 465 130 525 240"
+                />
+
+                {/* Central petal pencil contours */}
+                <path
+                  className="trace-line"
+                  d="M350 70 C328 120 310 195 324 290 C334 355 344 425 350 485"
+                />
+                <path
+                  className="trace-line"
+                  d="M350 70 C372 120 390 195 376 290 C366 355 356 425 350 485"
+                />
+                <path
+                  className="trace-line-secondary"
+                  d="M349 65 C325 125 306 200 322 294 C332 358 343 427 349 488"
+                />
+                <path
+                  className="trace-line-secondary"
+                  d="M351 65 C375 125 394 200 378 294 C368 358 357 427 351 488"
+                />
+                <path className="trace-line-guide" d="M347 78 L350 64 L353 78" />
+
+                {/* Left inner petal sketch */}
+                <path
+                  className="trace-line"
+                  d="M348 480 C322 435 256 350 242 260 C234 218 250 178 280 158 C310 138 338 185 348 255"
+                />
+                <path
+                  className="trace-line-secondary"
+                  d="M346 483 C319 438 253 354 239 263 C231 221 247 181 278 160 C307 141 336 188 346 258"
+                />
+
+                {/* Right inner petal sketch */}
+                <path
+                  className="trace-line"
+                  d="M352 480 C378 435 444 350 458 260 C466 218 450 178 420 158 C390 138 362 185 352 255"
+                />
+                <path
+                  className="trace-line-secondary"
+                  d="M354 483 C381 438 447 354 461 263 C469 221 453 181 422 160 C393 141 364 188 354 258"
+                />
+
+                {/* Left outer blooming petal */}
+                <path
+                  className="trace-line"
+                  d="M344 484 C272 465 194 408 148 338 C118 294 125 248 162 230 C206 210 266 284 332 390"
+                />
+                <path
+                  className="trace-line-secondary"
+                  d="M342 486 C269 468 191 411 145 341 C115 297 122 251 159 232 C203 213 263 287 330 393"
+                />
+
+                {/* Right outer blooming petal */}
+                <path
+                  className="trace-line"
+                  d="M356 484 C428 465 506 408 552 338 C582 294 575 248 538 230 C494 210 434 284 368 390"
+                />
+                <path
+                  className="trace-line-secondary"
+                  d="M358 486 C431 468 509 411 555 341 C585 297 578 251 541 232 C497 213 437 287 370 393"
+                />
+
+                {/* Base petal cradle */}
+                <path
+                  className="trace-line"
+                  d="M245 412 C288 474 350 496 412 474 C455 412 404 466 350 475 C296 466 245 412 245 412"
+                />
+                <path
+                  className="trace-line-secondary"
+                  d="M248 416 C290 477 350 499 410 477 C452 416 401 469 350 478 C299 469 248 416 248 416"
+                />
+
+                {/* Pencil shading / cross-hatching at base */}
+                <path className="trace-hatch" d="M336 488 L343 462" />
+                <path className="trace-hatch" d="M342 490 L347 460" />
+                <path className="trace-hatch" d="M350 492 L350 458" />
+                <path className="trace-hatch" d="M358 490 L353 460" />
+                <path className="trace-hatch" d="M364 488 L357 462" />
+
+                {/* Petal vein / structure guide lines */}
+                <path
+                  className="trace-line-guide"
+                  d="M350 470 C340 375 329 295 328 205"
+                />
+                <path
+                  className="trace-line-guide"
+                  d="M350 470 C360 375 371 295 372 205"
+                />
+              </g>
+            </svg>
+          </figure>
+          <div className="refine-axis">
+            <span>Trace</span>
+            <i />
+            <span>Refine</span>
+          </div>
+          <figure className="identity-panel">
+            <div className="identity-gridlines" />
+            <LogoAsset kind="symbol" className="identity-symbol" />
+            <figcaption>Identity / Simplified form</figcaption>
+          </figure>
+        </div>
+      </div>
+    </Slide>
+  );
 }
 
 function LogoRevealSlide() {
-  return <Slide dark><div className="slide-pad reveal-layout"><Kicker number="05" light>The ANBHA Logo</Kicker><div className="logo-specimen"><div><span>Symbol</span><LogoAsset kind="symbol" light className="spec-symbol" /></div><i /><div><span>Complete lockup</span><LogoAsset light className="spec-wordmark" /></div></div><p className="reveal-copy">A refined identity inspired by tradition,<br />designed for a modern silver jewellery brand.</p></div></Slide>;
+  return (
+    <Slide dark>
+      <div className="slide-pad reveal-layout">
+        <Kicker number="05" light>The ANBHA Logo</Kicker>
+        <div className="logo-specimen">
+          <div className="specimen-col">
+            <span>01 · Symbol</span>
+            <div className="spec-frame">
+              <LogoAsset kind="symbol" light className="spec-symbol" alt="ANBHA Symbol" />
+            </div>
+          </div>
+          <i />
+          <div className="specimen-col">
+            <span>02 · Word logo</span>
+            <div className="spec-frame">
+              <LogoAsset kind="wordmark" light className="spec-wordmark" alt="ANBHA Word Logo" />
+            </div>
+          </div>
+          <i />
+          <div className="specimen-col">
+            <span>03 · Tagline</span>
+            <div className="spec-frame">
+              <LogoAsset kind="tagline" light className="spec-tagline" alt="ANBHA Tagline" />
+            </div>
+          </div>
+        </div>
+        <p className="reveal-copy">
+          A refined identity inspired by tradition,<br />designed for a modern silver jewellery brand.
+        </p>
+      </div>
+    </Slide>
+  );
 }
 
-function MeaningSlide() {
-  return <Slide><div className="slide-pad meaning-layout"><div><Kicker number="06">What the logo represents</Kicker><SlideTitle>Meaning in<br />every <em>line.</em></SlideTitle></div><div className="meaning-list">{meanings.map(([title, text], index) => <div key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></div>)}</div></div></Slide>;
+function DualBackgroundSlide() {
+  return (
+    <Slide className="dual-split-slide">
+      <div className="dual-split-half cream-half">
+        <LogoAsset kind="lockup" color="green" className="dual-split-logo" alt="Complete ANBHA Green Logo on Cream Background" />
+      </div>
+      <div className="dual-split-half green-half">
+        <LogoAsset kind="lockup" color="white" className="dual-split-logo" alt="Complete ANBHA White Logo on Green Background" />
+      </div>
+    </Slide>
+  );
 }
 
 function ColorSlide() {
-  return <Slide><div className="slide-pad color-layout"><div className="color-heading"><Kicker number="07">Brand Colors</Kicker><SlideTitle>A palette of<br /><em>quiet confidence.</em></SlideTitle><p>Together, these colors create a visual language that feels pure, refined, minimal, and premium.</p></div><div className="swatch-stack">{brandColors.map((color, index) => <article key={color.hex} style={{ backgroundColor: color.hex, color: index === 2 ? "#F9F9F9" : "#193B32" }}><div><strong>{color.hex}</strong><span>{color.name}</span></div><p>{color.words.join(" · ")}</p></article>)}</div></div></Slide>;
+  return <Slide><div className="slide-pad color-layout"><div className="color-heading"><Kicker number="06">Brand Colors</Kicker><SlideTitle>A palette of<br /><em>quiet confidence.</em></SlideTitle><p>Together, these colors create a visual language that feels pure, refined, minimal, and premium.</p></div><div className="swatch-stack">{brandColors.map((color, index) => <article key={color.hex} style={{ backgroundColor: color.hex, color: index === 2 ? "#F9F9F9" : "#193B32" }}><div><strong>{color.hex}</strong><span>{color.name}</span></div><p>{color.words.join(" · ")}</p></article>)}</div></div></Slide>;
 }
 
 function TypographySlide() {
-  return <Slide sage><div className="slide-pad type-layout"><div className="type-intro"><Kicker number="08">Typography</Kicker><SlideTitle>Elegance,<br /><em>clearly spoken.</em></SlideTitle><p>The typography balances elegance and clarity—helping the brand feel premium, modern, and timeless.</p></div><div className="type-spec"><div><span>DISPLAY / CORMORANT GARAMOND</span><strong>Aa</strong><p>Pure Silver.<br /><em>Endless Stories.</em></p></div><div><span>BODY / MANROPE</span><p>ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />abcdefghijklmnopqrstuvwxyz<br />0123456789</p><small>REFINED · MODERN · TIMELESS</small></div></div></div></Slide>;
+  return (
+    <Slide sage>
+      <div className="slide-pad type-layout">
+        <div className="type-intro">
+          <Kicker number="07">Typography</Kicker>
+          <SlideTitle>
+            Elegance,<br /><em>clearly spoken.</em>
+          </SlideTitle>
+          <p>
+            The typography balances elegance and clarity—helping the brand feel premium, modern, and timeless.
+          </p>
+        </div>
+        <div className="type-spec">
+          {/* Display Font Card */}
+          <div className="type-card display-card">
+            <div className="type-card-top">
+              <div>
+                <span className="type-role-badge">Display Font</span>
+                <h3 className="type-font-heading serif-heading">Cormorant Upright</h3>
+              </div>
+              <strong className="type-glyph-hero">Aa</strong>
+            </div>
+            <div className="type-rationale-box">
+              <span className="type-rationale-label">Why we chose this font</span>
+              <p>
+                An upright cursive serif with distinct calligraphic poise and graceful curves. Its fluid, handcrafted ductus and delicate hairline serifs evoke royal Indian heritage, celebratory adornment, and the timeless artisanal purity of pure silver.
+              </p>
+            </div>
+          </div>
+
+          {/* Body Font Card */}
+          <div className="type-card body-card">
+            <div className="type-card-top">
+              <div>
+                <span className="type-role-badge">Body &amp; UI Font</span>
+                <h3 className="type-font-heading sans-heading">Manrope</h3>
+              </div>
+            </div>
+            <div className="type-body-content-grid">
+              <p className="type-character-set">
+                ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />
+                abcdefghijklmnopqrstuvwxyz<br />
+                0123456789
+              </p>
+              <div className="type-rationale-box">
+                <span className="type-rationale-label">Why we chose this font</span>
+                <p>
+                  A modern, geometric grotesque sans-serif with open apertures and clean geometric rhythm. It ensures effortless legibility and functional clarity across digital commerce, hallmark certificates, and product specifications.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Slide>
+  );
 }
 
 function UsageSlide() {
-  return <Slide><div className="slide-pad usage-layout"><div><Kicker number="09">Logo Usage Guidelines</Kicker><SlideTitle>Space to<br /><em>be seen.</em></SlideTitle><p className="body-copy">Preserve clear space and consistent proportions across every touchpoint.</p></div><div className="clearspace-demo"><div className="measure-line measure-x">1×</div><div className="measure-line measure-y">1×</div><LogoAsset className="usage-wordmark" /><div className="clear-box" /></div><div className="usage-row"><div><span>Primary lockup</span><LogoAsset className="mini-wordmark" /></div><div className="dark-use"><span>Reversed symbol</span><LogoAsset kind="symbol" light className="mini-symbol" /></div><div><span>Minimum symbol / 24 px</span><LogoAsset kind="symbol" className="mini-symbol" /></div></div></div></Slide>;
+  return <Slide><div className="slide-pad usage-layout"><div><Kicker number="08">Logo Usage Guidelines</Kicker><SlideTitle>Space to<br /><em>be seen.</em></SlideTitle><p className="body-copy">Preserve clear space and consistent proportions across every touchpoint.</p></div><div className="clearspace-demo"><div className="measure-line measure-x">1×</div><div className="measure-line measure-y">1×</div><LogoAsset className="usage-wordmark" /><div className="clear-box" /></div><div className="usage-row"><div><span>Primary lockup</span><LogoAsset className="mini-wordmark" /></div><div className="dark-use"><span>Reversed symbol</span><LogoAsset kind="symbol" light className="mini-symbol" /></div><div><span>Minimum symbol / 24 px</span><LogoAsset kind="symbol" className="mini-symbol" /></div></div></div></Slide>;
 }
 
 const misuseItems = ["Stretch", "Recolor", "Rotate", "Add effects", "Use on clutter", "Distort proportions"];
 
 function MisuseSlide() {
-  return <Slide sage><div className="slide-pad misuse-layout"><div className="misuse-heading"><Kicker number="10">Logo Misuse</Kicker><SlideTitle>Keep it<br /><em>consistent.</em></SlideTitle><p>To maintain recognition, the logo should always be used correctly.</p></div><div className="misuse-cards">{misuseItems.map((item, index) => <article key={item}><div className={`misuse-logo misuse-logo-${index}`}><LogoAsset kind="symbol" /><X size={18} /></div><p>Do not {item.toLowerCase()}</p></article>)}</div></div></Slide>;
+  return <Slide sage><div className="slide-pad misuse-layout"><div className="misuse-heading"><Kicker number="09">Logo Misuse</Kicker><SlideTitle>Keep it<br /><em>consistent.</em></SlideTitle><p>To maintain recognition, the logo should always be used correctly.</p></div><div className="misuse-cards">{misuseItems.map((item, index) => <article key={item}><div className={`misuse-logo misuse-logo-${index}`}><LogoAsset kind="symbol" /><X size={18} /></div><p>Do not {item.toLowerCase()}</p></article>)}</div></div></Slide>;
 }
 
 function PackagingSlide() {
-  return <Slide><div className="slide-pad package-layout"><div className="package-copy"><Kicker number="11">Packaging Mockups</Kicker><SlideTitle>The story,<br /><em>unwrapped.</em></SlideTitle><p>The ANBHA identity extends beautifully across packaging, creating a premium and memorable unboxing experience.</p><div className="package-tags"><span>Jewellery box</span><span>Pouch</span><span>Carry bag</span><span>Brand cards</span></div></div><div className="package-image"><Image src="/brand/packaging/packaging-hero.png" alt="Premium jewellery packaging in the ANBHA palette" fill sizes="58vw" className="object-cover" /><LogoAsset kind="symbol" className="package-logo-overlay" /></div></div></Slide>;
+  return <Slide><div className="slide-pad package-layout"><div className="package-copy"><Kicker number="10">Packaging Mockups</Kicker><SlideTitle>The story,<br /><em>unwrapped.</em></SlideTitle><p>The ANBHA identity extends beautifully across packaging, creating a premium and memorable unboxing experience.</p><div className="package-tags"><span>Jewellery box</span><span>Pouch</span><span>Carry bag</span><span>Brand cards</span></div></div><div className="package-image"><Image src="/brand/packaging/packaging-hero.png" alt="Premium jewellery packaging in the ANBHA palette" fill sizes="58vw" className="object-cover" /><LogoAsset kind="symbol" className="package-logo-overlay" /></div></div></Slide>;
 }
 
 function CollateralSlide() {
-  return <Slide dark><div className="slide-pad collateral-layout"><div><Kicker number="12" light>Brand Applications</Kicker><SlideTitle>Every detail<br /><em>belongs.</em></SlideTitle></div><div className="collateral-stage"><article className="card-auth"><span>Certificate of Authenticity</span><LogoAsset kind="symbol" light className="card-logo" /><small>925 / PURE SILVER</small></article><article className="card-care"><span>Jewellery Care</span><LogoAsset kind="symbol" className="care-symbol" /><p>Keep dry.<br />Store softly.<br />Wear often.</p></article><article className="card-thanks"><span>A note from ANBHA</span><p>Thank you for making us<br />part of your story.</p><LogoAsset kind="symbol" className="thanks-symbol" /></article></div></div></Slide>;
+  return <Slide dark><div className="slide-pad collateral-layout"><div><Kicker number="11" light>Brand Applications</Kicker><SlideTitle>Every detail<br /><em>belongs.</em></SlideTitle></div><div className="collateral-stage"><article className="card-auth"><span>Certificate of Authenticity</span><LogoAsset kind="symbol" light className="card-logo" /><small>925 / PURE SILVER</small></article><article className="card-care"><span>Jewellery Care</span><LogoAsset kind="symbol" className="care-symbol" /><p>Keep dry.<br />Store softly.<br />Wear often.</p></article><article className="card-thanks"><span>A note from ANBHA</span><p>Thank you for making us<br />part of your story.</p><LogoAsset kind="symbol" className="thanks-symbol" /></article></div></div></Slide>;
 }
 
 function WebsiteSlide() {
-  return <Slide><div className="slide-pad digital-layout"><div className="digital-copy"><Kicker number="13">Digital Experience — Website</Kicker><SlideTitle>A quiet<br />digital <em>stage.</em></SlideTitle><p>The identity translates into a clean environment for discovering each collection.</p></div><div className="browser-frame"><div className="browser-top"><i/><i/><i/><span>anbha.com</span></div><div className="website-ui"><header><LogoAsset kind="symbol" className="web-symbol"/><nav>COLLECTIONS&nbsp;&nbsp;&nbsp;&nbsp; OUR STORY</nav><Search size={15}/></header><div className="website-hero"><div><small>THE FIRST CHAPTER</small><h3>Silver,<br/>made eternal.</h3><button>Discover the collection</button></div><div className="silver-ring"/></div><div className="product-row"><i/><i/><i/></div></div></div></div></Slide>;
+  return <Slide><div className="slide-pad digital-layout"><div className="digital-copy"><Kicker number="12">Digital Experience — Website</Kicker><SlideTitle>A quiet<br />digital <em>stage.</em></SlideTitle><p>The identity translates into a clean environment for discovering each collection.</p></div><div className="browser-frame"><div className="browser-top"><i/><i/><i/><span>anbha.com</span></div><div className="website-ui"><header><LogoAsset kind="symbol" className="web-symbol"/><nav>COLLECTIONS&nbsp;&nbsp;&nbsp;&nbsp; OUR STORY</nav><Search size={15}/></header><div className="website-hero"><div><small>THE FIRST CHAPTER</small><h3>Silver,<br/>made eternal.</h3><button>Discover the collection</button></div><div className="silver-ring"/></div><div className="product-row"><i/><i/><i/></div></div></div></div></Slide>;
 }
 
 function Phone({ product = false }: { product?: boolean }) {
@@ -112,18 +413,18 @@ function Phone({ product = false }: { product?: boolean }) {
 }
 
 function MobileSlide() {
-  return <Slide sage><div className="slide-pad mobile-layout"><div><Kicker number="14">Digital Experience — Mobile</Kicker><SlideTitle>Grace,<br />in your <em>hand.</em></SlideTitle><p>On mobile, the identity remains graceful and refined—an immersive browsing experience without the noise.</p></div><div className="phone-pair"><Phone/><Phone product/></div></div></Slide>;
+  return <Slide sage><div className="slide-pad mobile-layout"><div><Kicker number="13">Digital Experience — Mobile</Kicker><SlideTitle>Grace,<br />in your <em>hand.</em></SlideTitle><p>On mobile, the identity remains graceful and refined—an immersive browsing experience without the noise.</p></div><div className="phone-pair"><Phone/><Phone product/></div></div></Slide>;
 }
 
 function FeelSlide() {
-  return <Slide><div className="slide-pad feel-layout"><Kicker number="15">How ANBHA Feels</Kicker><div className="feel-words"><span>Pure</span><span>Elegant</span><span>Timeless</span><span>Graceful</span><span>Premium</span></div><p>ANBHA is designed to feel calm, luxurious, and meaningful—a brand that celebrates silver through simplicity and storytelling.</p><LogoAsset kind="symbol" className="feel-mark" alt="" /></div></Slide>;
+  return <Slide><div className="slide-pad feel-layout"><Kicker number="14">How ANBHA Feels</Kicker><div className="feel-words"><span>Pure</span><span>Elegant</span><span>Timeless</span><span>Graceful</span><span>Premium</span></div><p>ANBHA is designed to feel calm, luxurious, and meaningful—a brand that celebrates silver through simplicity and storytelling.</p><LogoAsset kind="symbol" className="feel-mark" alt="" /></div></Slide>;
 }
 
 function ClosingSlide() {
   return <Slide dark className="closing-slide"><div className="closing-copy"><p>Inspired by the lotus of Lakshmi, ANBHA is more than a logo—it is a symbol of purity, prosperity, and timeless beauty.</p><i/><LogoAsset light className="closing-logo"/></div><small>Inspired by purity · Designed for stories that last</small></Slide>;
 }
 
-const slides = [CoverSlide, IntroductionSlide, InspirationSlide, TransformationSlide, LogoRevealSlide, MeaningSlide, ColorSlide, TypographySlide, UsageSlide, MisuseSlide, PackagingSlide, CollateralSlide, WebsiteSlide, MobileSlide, FeelSlide, ClosingSlide];
+const slides = [CoverSlide, IntroductionSlide, InspirationSlide, TransformationSlide, LogoRevealSlide, DualBackgroundSlide, ColorSlide, TypographySlide, UsageSlide, MisuseSlide, PackagingSlide, CollateralSlide, WebsiteSlide, MobileSlide, FeelSlide, ClosingSlide];
 const chapters = ["The Story", "The Story", "The Story", "The Story", "The Identity", "The Identity", "The Identity", "The Identity", "Guidelines", "Guidelines", "Experience", "Experience", "Experience", "Experience", "Experience", "Closing"];
 
 export default function BrandDeck() {
@@ -163,8 +464,8 @@ export default function BrandDeck() {
     const scope = deck.current;
     if (active !== 3 || reduceMotion || !scope) return;
     const context = gsap.context(() => {
-      gsap.fromTo(".trace-line", { strokeDashoffset: 760 }, { strokeDashoffset: 0, duration: 1.8, stagger: .14, ease: "power2.inOut" });
-      gsap.fromTo(".identity-symbol", { opacity: 0, scale: .88 }, { opacity: 1, scale: 1, duration: 1.1, delay: .8, ease: "power3.out" });
+      gsap.fromTo(".trace-line, .trace-line-secondary, .trace-line-guide, .trace-hatch", { strokeDashoffset: 950 }, { strokeDashoffset: 0, duration: 1.8, stagger: .04, ease: "power2.inOut" });
+      gsap.fromTo(".identity-symbol", { opacity: 0, scale: .88 }, { opacity: 1, scale: 1, duration: 1.1, delay: .9, ease: "power3.out" });
     }, scope);
     return () => context.revert();
   }, [active, reduceMotion]);
