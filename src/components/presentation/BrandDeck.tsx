@@ -40,7 +40,7 @@ function Slide({ children, dark = false, sage = false, className = "" }: { child
 }
 
 function Kicker({ number, children, light = false }: { number: string; children: ReactNode; light?: boolean }) {
-  return <div className={`kicker ${light ? "kicker-light" : ""}`}><span>{number}</span><i />{children}</div>;
+  return <div className={`kicker ${light ? "kicker-light" : ""}`}><span>{number}</span>{children}</div>;
 }
 
 function SlideTitle({ children, className = "" }: { children: ReactNode; className?: string }) {
@@ -310,6 +310,10 @@ function LogoRevealSlide() {
   );
 }
 
+function ColorSlide() {
+  return <Slide><div className="slide-pad color-layout"><div className="color-heading"><Kicker number="06">Brand Colors</Kicker><SlideTitle>A palette of<br /><em>quiet confidence.</em></SlideTitle><p>Together, these colors create a visual language that feels pure, refined, minimal, and premium.</p></div><div className="swatch-stack">{brandColors.map((color, index) => <article key={color.hex} style={{ backgroundColor: color.hex, color: index === 2 ? "#F9F9F9" : "#193B32" }}><div><strong>{color.hex}</strong><span>{color.name}</span></div><p>{color.words.join(" · ")}</p></article>)}</div></div></Slide>;
+}
+
 function DualBackgroundSlide() {
   return (
     <Slide className="dual-split-slide">
@@ -321,10 +325,6 @@ function DualBackgroundSlide() {
       </div>
     </Slide>
   );
-}
-
-function ColorSlide() {
-  return <Slide><div className="slide-pad color-layout"><div className="color-heading"><Kicker number="06">Brand Colors</Kicker><SlideTitle>A palette of<br /><em>quiet confidence.</em></SlideTitle><p>Together, these colors create a visual language that feels pure, refined, minimal, and premium.</p></div><div className="swatch-stack">{brandColors.map((color, index) => <article key={color.hex} style={{ backgroundColor: color.hex, color: index === 2 ? "#F9F9F9" : "#193B32" }}><div><strong>{color.hex}</strong><span>{color.name}</span></div><p>{color.words.join(" · ")}</p></article>)}</div></div></Slide>;
 }
 
 function TypographySlide() {
@@ -387,7 +387,70 @@ function TypographySlide() {
 }
 
 function UsageSlide() {
-  return <Slide><div className="slide-pad usage-layout"><div><Kicker number="08">Logo Usage Guidelines</Kicker><SlideTitle>Space to<br /><em>be seen.</em></SlideTitle><p className="body-copy">Preserve clear space and consistent proportions across every touchpoint.</p></div><div className="clearspace-demo"><div className="measure-line measure-x">1×</div><div className="measure-line measure-y">1×</div><LogoAsset className="usage-wordmark" /><div className="clear-box" /></div><div className="usage-row"><div><span>Primary lockup</span><LogoAsset className="mini-wordmark" /></div><div className="dark-use"><span>Reversed symbol</span><LogoAsset kind="symbol" light className="mini-symbol" /></div><div><span>Minimum symbol / 24 px</span><LogoAsset kind="symbol" className="mini-symbol" /></div></div></div></Slide>;
+  const [activeUsage, setActiveUsage] = useState<"logo" | "wordmark" | "lockup">("logo");
+
+  return (
+    <Slide>
+      <div className="slide-pad usage-layout">
+        <div>
+          <Kicker number="08">Logo Usage Guidelines</Kicker>
+          <SlideTitle>
+            Precision in<br /><em>every form.</em>
+          </SlideTitle>
+          <p className="body-copy">
+            Preserve clear space and consistent proportions across every touchpoint.
+          </p>
+        </div>
+        <div className="clearspace-demo">
+          <div className={`clear-box clear-box-${activeUsage}`}>
+            <div className="measure-line measure-x">1×</div>
+            <div className="measure-line measure-y">1×</div>
+          </div>
+          {activeUsage === "logo" && (
+            <LogoAsset kind="symbol" className="usage-display-symbol" alt="ANBHA symbol logo" />
+          )}
+          {activeUsage === "wordmark" && (
+            <LogoAsset kind="wordmark" className="usage-display-wordmark" alt="ANBHA wordmark" />
+          )}
+          {activeUsage === "lockup" && (
+            <LogoAsset kind="lockup" className="usage-display-lockup" alt="ANBHA logo and wordmark" />
+          )}
+        </div>
+        <div className="usage-row" role="tablist" aria-label="Logo Usage Types">
+          <button
+            type="button"
+            role="tab"
+            aria-selected={activeUsage === "logo"}
+            onClick={() => setActiveUsage("logo")}
+            className={activeUsage === "logo" ? "dark-use" : ""}
+          >
+            <span>1. Logo</span>
+            <LogoAsset kind="symbol" light={activeUsage === "logo"} className="mini-symbol" alt="Logo preview" />
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={activeUsage === "wordmark"}
+            onClick={() => setActiveUsage("wordmark")}
+            className={activeUsage === "wordmark" ? "dark-use" : ""}
+          >
+            <span>2. Wordmark</span>
+            <LogoAsset kind="wordmark" light={activeUsage === "wordmark"} className="mini-wordmark" alt="Wordmark preview" />
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={activeUsage === "lockup"}
+            onClick={() => setActiveUsage("lockup")}
+            className={activeUsage === "lockup" ? "dark-use" : ""}
+          >
+            <span>3. Logo + Wordmark</span>
+            <LogoAsset kind="lockup" light={activeUsage === "lockup"} className="mini-wordmark" alt="Logo + wordmark preview" />
+          </button>
+        </div>
+      </div>
+    </Slide>
+  );
 }
 
 const misuseItems = ["Stretch", "Recolor", "Rotate", "Add effects", "Use on clutter", "Distort proportions"];
@@ -424,7 +487,7 @@ function ClosingSlide() {
   return <Slide dark className="closing-slide"><div className="closing-copy"><p>Inspired by the lotus of Lakshmi, ANBHA is more than a logo, it is a symbol of purity, prosperity, and timeless beauty.</p><i/><LogoAsset light className="closing-logo"/></div><small>Inspired by purity · Designed for stories that last</small></Slide>;
 }
 
-const slides = [CoverSlide, IntroductionSlide, InspirationSlide, TransformationSlide, LogoRevealSlide, DualBackgroundSlide, ColorSlide, TypographySlide, UsageSlide, MisuseSlide, PackagingSlide, CollateralSlide, WebsiteSlide, MobileSlide, FeelSlide, ClosingSlide];
+const slides = [CoverSlide, IntroductionSlide, InspirationSlide, TransformationSlide, LogoRevealSlide, ColorSlide, DualBackgroundSlide, TypographySlide, UsageSlide, MisuseSlide, PackagingSlide, CollateralSlide, WebsiteSlide, MobileSlide, FeelSlide, ClosingSlide];
 const chapters = ["The Story", "The Story", "The Story", "The Story", "The Identity", "The Identity", "The Identity", "The Identity", "Guidelines", "Guidelines", "Experience", "Experience", "Experience", "Experience", "Experience", "Closing"];
 
 export default function BrandDeck() {
