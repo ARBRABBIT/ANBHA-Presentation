@@ -10,7 +10,7 @@ const display = Cormorant_Upright({
 const body = Manrope({ subsets: ["latin"], variable: "--font-body" });
 
 export const metadata: Metadata = {
-  title: "ANBHA — Brand Identity Presentation",
+  title: "ANBHA · Brand Identity Presentation",
   description: "The story and identity of ANBHA. Pure Silver. Endless Stories.",
 };
 

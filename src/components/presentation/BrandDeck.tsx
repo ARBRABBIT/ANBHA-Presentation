@@ -82,7 +82,7 @@ function InspirationSlide() {
             Rooted in<br /><em>purity.</em>
           </SlideTitle>
           <p className="body-copy">
-            The ANBHA identity is inspired by the lotus associated with Goddess Lakshmi—a symbol of purity, grace, prosperity, and divine beauty.
+            The ANBHA identity is inspired by the lotus associated with Goddess Lakshmi, a symbol of purity, grace, prosperity, and divine beauty.
           </p>
           <div className="meaning-strip">
             <span>Purity</span>
@@ -99,7 +99,7 @@ function InspirationSlide() {
             className="object-cover"
             priority
           />
-          <span className="image-caption">01 / Natural reference — pink lotus</span>
+          <span className="image-caption">01 / Natural reference · pink lotus</span>
         </div>
       </div>
     </Slide>
@@ -337,7 +337,7 @@ function TypographySlide() {
             Elegance,<br /><em>clearly spoken.</em>
           </SlideTitle>
           <p>
-            The typography balances elegance and clarity—helping the brand feel premium, modern, and timeless.
+            The typography balances elegance and clarity, helping the brand feel premium, modern, and timeless.
           </p>
         </div>
         <div className="type-spec">
@@ -405,7 +405,7 @@ function CollateralSlide() {
 }
 
 function WebsiteSlide() {
-  return <Slide><div className="slide-pad digital-layout"><div className="digital-copy"><Kicker number="12">Digital Experience — Website</Kicker><SlideTitle>A quiet<br />digital <em>stage.</em></SlideTitle><p>The identity translates into a clean environment for discovering each collection.</p></div><div className="browser-frame"><div className="browser-top"><i/><i/><i/><span>anbha.com</span></div><div className="website-ui"><header><LogoAsset kind="symbol" className="web-symbol"/><nav>COLLECTIONS&nbsp;&nbsp;&nbsp;&nbsp; OUR STORY</nav><Search size={15}/></header><div className="website-hero"><div><small>THE FIRST CHAPTER</small><h3>Silver,<br/>made eternal.</h3><button>Discover the collection</button></div><div className="silver-ring"/></div><div className="product-row"><i/><i/><i/></div></div></div></div></Slide>;
+  return <Slide><div className="slide-pad digital-layout"><div className="digital-copy"><Kicker number="12">Digital Experience · Website</Kicker><SlideTitle>A quiet<br />digital <em>stage.</em></SlideTitle><p>The identity translates into a clean environment for discovering each collection.</p></div><div className="browser-frame"><div className="browser-top"><i/><i/><i/><span>anbha.com</span></div><div className="website-ui"><header><LogoAsset kind="symbol" className="web-symbol"/><nav>COLLECTIONS&nbsp;&nbsp;&nbsp;&nbsp; OUR STORY</nav><Search size={15}/></header><div className="website-hero"><div><small>THE FIRST CHAPTER</small><h3>Silver,<br/>made eternal.</h3><button>Discover the collection</button></div><div className="silver-ring"/></div><div className="product-row"><i/><i/><i/></div></div></div></div></Slide>;
 }
 
 function Phone({ product = false }: { product?: boolean }) {
@@ -413,15 +413,15 @@ function Phone({ product = false }: { product?: boolean }) {
 }
 
 function MobileSlide() {
-  return <Slide sage><div className="slide-pad mobile-layout"><div><Kicker number="13">Digital Experience — Mobile</Kicker><SlideTitle>Grace,<br />in your <em>hand.</em></SlideTitle><p>On mobile, the identity remains graceful and refined—an immersive browsing experience without the noise.</p></div><div className="phone-pair"><Phone/><Phone product/></div></div></Slide>;
+  return <Slide sage><div className="slide-pad mobile-layout"><div><Kicker number="13">Digital Experience · Mobile</Kicker><SlideTitle>Grace,<br />in your <em>hand.</em></SlideTitle><p>On mobile, the identity remains graceful and refined, an immersive browsing experience without the noise.</p></div><div className="phone-pair"><Phone/><Phone product/></div></div></Slide>;
 }
 
 function FeelSlide() {
-  return <Slide><div className="slide-pad feel-layout"><Kicker number="14">How ANBHA Feels</Kicker><div className="feel-words"><span>Pure</span><span>Elegant</span><span>Timeless</span><span>Graceful</span><span>Premium</span></div><p>ANBHA is designed to feel calm, luxurious, and meaningful—a brand that celebrates silver through simplicity and storytelling.</p><LogoAsset kind="symbol" className="feel-mark" alt="" /></div></Slide>;
+  return <Slide><div className="slide-pad feel-layout"><Kicker number="14">How ANBHA Feels</Kicker><div className="feel-words"><span>Pure</span><span>Elegant</span><span>Timeless</span><span>Graceful</span><span>Premium</span></div><p>ANBHA is designed to feel calm, luxurious, and meaningful, a brand that celebrates silver through simplicity and storytelling.</p><LogoAsset kind="symbol" className="feel-mark" alt="" /></div></Slide>;
 }
 
 function ClosingSlide() {
-  return <Slide dark className="closing-slide"><div className="closing-copy"><p>Inspired by the lotus of Lakshmi, ANBHA is more than a logo—it is a symbol of purity, prosperity, and timeless beauty.</p><i/><LogoAsset light className="closing-logo"/></div><small>Inspired by purity · Designed for stories that last</small></Slide>;
+  return <Slide dark className="closing-slide"><div className="closing-copy"><p>Inspired by the lotus of Lakshmi, ANBHA is more than a logo, it is a symbol of purity, prosperity, and timeless beauty.</p><i/><LogoAsset light className="closing-logo"/></div><small>Inspired by purity · Designed for stories that last</small></Slide>;
 }
 
 const slides = [CoverSlide, IntroductionSlide, InspirationSlide, TransformationSlide, LogoRevealSlide, DualBackgroundSlide, ColorSlide, TypographySlide, UsageSlide, MisuseSlide, PackagingSlide, CollateralSlide, WebsiteSlide, MobileSlide, FeelSlide, ClosingSlide];
