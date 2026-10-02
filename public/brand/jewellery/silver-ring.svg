@@ -1,0 +1,139 @@
+<svg width="360" height="360" viewBox="0 0 360 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Soft Contact Shadow -->
+    <radialGradient id="contactShadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#112922" stop-opacity="0.65" />
+      <stop offset="60%" stop-color="#112922" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#112922" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Metallic Silver Band Gradient (Front) -->
+    <linearGradient id="silverBandFront" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5F8F7" />
+      <stop offset="20%" stop-color="#D1D9D7" />
+      <stop offset="40%" stop-color="#92A19D" />
+      <stop offset="58%" stop-color="#EBF1F0" />
+      <stop offset="70%" stop-color="#FFFFFF" />
+      <stop offset="85%" stop-color="#A5B4B0" />
+      <stop offset="100%" stop-color="#71827E" />
+    </linearGradient>
+
+    <!-- Metallic Silver Band (Inner) -->
+    <linearGradient id="silverBandInner" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#5B6B67" />
+      <stop offset="50%" stop-color="#7D8E8A" />
+      <stop offset="100%" stop-color="#3A4844" />
+    </linearGradient>
+
+    <!-- Silver Specular Highlight -->
+    <linearGradient id="specularLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0" />
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Lotus Setting Silver Gradient -->
+    <linearGradient id="lotusSilver" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="30%" stop-color="#E0E7E5" />
+      <stop offset="70%" stop-color="#8FA09C" />
+      <stop offset="100%" stop-color="#5F706C" />
+    </linearGradient>
+
+    <!-- Diamond Brilliant Gradients -->
+    <linearGradient id="gemTable" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="60%" stop-color="#F0FAF9" />
+      <stop offset="100%" stop-color="#D8ECE9" />
+    </linearGradient>
+    <linearGradient id="gemFacet1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#BEDBD7" />
+    </linearGradient>
+    <linearGradient id="gemFacet2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E8F6F5" />
+      <stop offset="100%" stop-color="#96B8B3" />
+    </linearGradient>
+    <linearGradient id="gemFacetDark" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8CA7A3" />
+      <stop offset="100%" stop-color="#C7E2DF" />
+    </linearGradient>
+
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- 1. Ambient Contact Shadow onto Plate -->
+  <ellipse cx="180" cy="308" rx="78" ry="16" fill="url(#contactShadow)" />
+  <ellipse cx="180" cy="306" rx="44" ry="8" fill="#11241F" opacity="0.55" />
+
+  <!-- 2. Ring Rear Inner Arc -->
+  <path d="M104 208 C98 160 130 114 180 114 C230 114 262 160 256 208 C250 170 224 134 180 134 C136 134 110 170 104 208 Z" fill="url(#silverBandInner)" />
+
+  <!-- 3. Ring Main Solid Band (Torus Front) -->
+  <path d="M102 206 C92 260 132 304 180 304 C228 304 268 260 258 206 C264 268 220 314 180 314 C140 314 96 268 102 206 Z" fill="url(#silverBandFront)" />
+  
+  <!-- Outer band edge definition -->
+  <path d="M98 200 C86 264 128 316 180 316 C232 316 274 264 262 200 C276 268 230 322 180 322 C130 322 84 268 98 200 Z" fill="#4E5E5A" opacity="0.6" />
+
+  <!-- 4. Metallic Specular Crest on Front Loop -->
+  <path d="M118 240 C132 284 158 301 180 301 C202 301 228 284 242 240 C234 278 208 296 180 296 C152 296 126 278 118 240 Z" fill="url(#specularLine)" />
+  <path d="M140 274 C158 292 172 295 180 295 C188 295 202 292 220 274 C208 288 194 293 180 293 C166 293 152 288 140 274 Z" fill="#FFFFFF" opacity="0.9" />
+
+  <!-- 5. Ring Band Shoulders (Rising to Setting) -->
+  <path d="M104 208 C100 172 122 140 156 120 L166 128 C136 146 118 174 122 204 Z" fill="url(#silverBandFront)" />
+  <path d="M256 208 C260 172 238 140 204 120 L194 128 C224 146 242 174 238 204 Z" fill="url(#silverBandFront)" />
+
+  <!-- 6. Lotus Crown Setting (Petal Motifs) -->
+  <!-- Base collet -->
+  <ellipse cx="180" cy="122" rx="34" ry="10" fill="url(#lotusSilver)" />
+  <ellipse cx="180" cy="120" rx="31" ry="8" fill="#394844" />
+
+  <!-- Left Lotus Petal -->
+  <path d="M148 122 C140 105 142 88 158 84 C164 96 164 110 158 120 Z" fill="url(#lotusSilver)" stroke="#FFFFFF" stroke-width="0.8" />
+  <path d="M154 116 C148 104 149 92 158 86" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round" opacity="0.8" />
+
+  <!-- Right Lotus Petal -->
+  <path d="M212 122 C220 105 218 88 202 84 C196 96 196 110 202 120 Z" fill="url(#lotusSilver)" stroke="#FFFFFF" stroke-width="0.8" />
+  <path d="M206 116 C212 104 211 92 202 86" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round" opacity="0.8" />
+
+  <!-- Center Lotus Petal & Prongs -->
+  <path d="M166 124 C160 102 172 74 180 66 C188 74 200 102 194 124 Z" fill="url(#lotusSilver)" />
+  <path d="M180 70 L180 120" stroke="#FFFFFF" stroke-width="1" opacity="0.75" />
+
+  <!-- 7. Brilliant Cut Solitaire Diamond (Held in Lotus) -->
+  <g filter="url(#glow)">
+    <!-- Diamond Pavilion Depth -->
+    <polygon points="180,108 152,78 208,78" fill="url(#gemFacetDark)" opacity="0.85" />
+    <polygon points="180,108 166,78 194,78" fill="#6E8E89" opacity="0.6" />
+
+    <!-- Diamond Crown Facets -->
+    <polygon points="152,78 162,60 180,62 166,78" fill="url(#gemFacet1)" />
+    <polygon points="208,78 198,60 180,62 194,78" fill="url(#gemFacet2)" />
+    <polygon points="180,62 166,78 194,78" fill="#FFFFFF" opacity="0.9" />
+
+    <!-- Diamond Top Table -->
+    <polygon points="162,60 198,60 190,52 170,52" fill="url(#gemTable)" />
+    <polygon points="162,60 152,78 158,66" fill="#FFFFFF" opacity="0.95" />
+    <polygon points="198,60 208,78 202,66" fill="#A4C4C0" />
+    <polygon points="170,52 190,52 180,44" fill="#FFFFFF" />
+
+    <!-- Star Sparkle Glint -->
+    <g transform="translate(164, 56)">
+      <path d="M0,-14 Q0,0 14,0 Q0,0 0,14 Q0,0 -14,0 Q0,0 0,-14 Z" fill="#FFFFFF" opacity="0.95" />
+      <circle cx="0" cy="0" r="3.5" fill="#FFFFFF" />
+      <circle cx="0" cy="0" r="7" fill="#D9F2EF" opacity="0.4" />
+    </g>
+  </g>
+
+  <!-- 8. Lotus Corner Beads / Prongs on Gem -->
+  <circle cx="152" cy="78" r="3.2" fill="url(#lotusSilver)" stroke="#FFFFFF" stroke-width="0.6" />
+  <circle cx="208" cy="78" r="3.2" fill="url(#lotusSilver)" stroke="#FFFFFF" stroke-width="0.6" />
+  <circle cx="162" cy="60" r="2.8" fill="#FFFFFF" />
+  <circle cx="198" cy="60" r="2.8" fill="url(#lotusSilver)" stroke="#FFFFFF" stroke-width="0.6" />
+</svg>

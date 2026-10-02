@@ -460,19 +460,169 @@ function MisuseSlide() {
 }
 
 function PackagingSlide() {
-  return <Slide><div className="slide-pad package-layout"><div className="package-copy"><Kicker number="10">Packaging Mockups</Kicker><SlideTitle>The story,<br /><em>unwrapped.</em></SlideTitle><p>The ANBHA identity extends beautifully across packaging, creating a premium and memorable unboxing experience.</p><div className="package-tags"><span>Jewellery box</span><span>Pouch</span><span>Carry bag</span><span>Brand cards</span></div></div><div className="package-image"><Image src="/brand/packaging/packaging-hero.png" alt="Premium jewellery packaging in the ANBHA palette" fill sizes="58vw" className="object-cover" /><LogoAsset kind="symbol" className="package-logo-overlay" /></div></div></Slide>;
+  return (
+    <Slide>
+      <div className="slide-pad package-layout">
+        <div className="package-copy">
+          <Kicker number="10">Packaging Mockups</Kicker>
+          <SlideTitle>
+            The story,<br /><em>unwrapped.</em>
+          </SlideTitle>
+          <p>
+            The ANBHA identity extends beautifully across packaging, creating a premium and memorable unboxing experience.
+          </p>
+          <div className="package-tags">
+            <span>Jewellery box</span>
+            <span>Velvet pouch</span>
+            <span>Gift tag</span>
+            <span>Brand cards</span>
+          </div>
+        </div>
+        <div className="package-image">
+          <Image
+            src="/brand/packaging/mockup-1.png"
+            alt="ANBHA jewellery packaging set"
+            fill
+            sizes="58vw"
+            className="object-cover"
+            priority
+          />
+        </div>
+      </div>
+    </Slide>
+  );
 }
 
 function CollateralSlide() {
-  return <Slide dark><div className="slide-pad collateral-layout"><div><Kicker number="11" light>Brand Applications</Kicker><SlideTitle>Every detail<br /><em>belongs.</em></SlideTitle></div><div className="collateral-stage"><article className="card-auth"><span>Certificate of Authenticity</span><LogoAsset kind="symbol" light className="card-logo" /><small>925 / PURE SILVER</small></article><article className="card-care"><span>Jewellery Care</span><LogoAsset kind="symbol" className="care-symbol" /><p>Keep dry.<br />Store softly.<br />Wear often.</p></article><article className="card-thanks"><span>A note from ANBHA</span><p>Thank you for making us<br />part of your story.</p><LogoAsset kind="symbol" className="thanks-symbol" /></article></div></div></Slide>;
+  return (
+    <Slide dark>
+      <div className="slide-pad collateral-layout">
+        <div>
+          <Kicker number="11" light>Brand Applications</Kicker>
+          <SlideTitle>
+            Every detail<br /><em>belongs.</em>
+          </SlideTitle>
+        </div>
+        <div className="collateral-stage">
+          <div className="floating-card-item card-back-float">
+            <img
+              src="/brand/collateral/back.svg"
+              alt="ANBHA Brand Card - Back with QR code and contact details"
+              className="floating-card-img"
+              draggable={false}
+            />
+          </div>
+          <div className="floating-card-item card-front-float">
+            <img
+              src="/brand/collateral/front.svg"
+              alt="ANBHA Brand Card - Front with signature logo"
+              className="floating-card-img"
+              draggable={false}
+            />
+          </div>
+        </div>
+      </div>
+    </Slide>
+  );
 }
 
 function WebsiteSlide() {
-  return <Slide><div className="slide-pad digital-layout"><div className="digital-copy"><Kicker number="12">Digital Experience · Website</Kicker><SlideTitle>A quiet<br />digital <em>stage.</em></SlideTitle><p>The identity translates into a clean environment for discovering each collection.</p></div><div className="browser-frame"><div className="browser-top"><i/><i/><i/><span>anbha.com</span></div><div className="website-ui"><header><LogoAsset kind="symbol" className="web-symbol"/><nav>COLLECTIONS&nbsp;&nbsp;&nbsp;&nbsp; OUR STORY</nav><Search size={15}/></header><div className="website-hero"><div><small>THE FIRST CHAPTER</small><h3>Silver,<br/>made eternal.</h3><button>Discover the collection</button></div><div className="silver-ring"/></div><div className="product-row"><i/><i/><i/></div></div></div></div></Slide>;
+  return (
+    <Slide>
+      <div className="slide-pad digital-layout">
+        <div className="digital-copy">
+          <Kicker number="12">Digital Experience · Website</Kicker>
+          <SlideTitle>
+            A quiet<br />digital <em>stage.</em>
+          </SlideTitle>
+          <p>The identity translates into a clean environment for discovering each collection.</p>
+        </div>
+        <div className="browser-frame">
+          <div className="browser-top">
+            <i/><i/><i/><span>anbha.com</span>
+          </div>
+          <div className="website-ui">
+            <header>
+              <LogoAsset kind="symbol" className="web-symbol"/>
+              <nav>COLLECTIONS&nbsp;&nbsp;&nbsp;&nbsp; OUR STORY</nav>
+              <Search size={15}/>
+            </header>
+            <div className="website-hero">
+              <div>
+                <small>THE FIRST CHAPTER</small>
+                <h3>Silver,<br/>made eternal.</h3>
+                <button>Discover the collection</button>
+              </div>
+              <div className="hero-plate-stage">
+                <div className="silver-ring"/>
+                <img
+                  src="/brand/jewellery/silver-ring.svg"
+                  alt="ANBHA Pure Silver Lotus Ring"
+                  className="plate-silver-ring"
+                  draggable={false}
+                />
+              </div>
+            </div>
+            <div className="product-row">
+              <i/><i/><i/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Slide>
+  );
 }
 
 function Phone({ product = false }: { product?: boolean }) {
-  return <div className="phone"><div className="island"/><header><Menu size={13}/><LogoAsset kind="symbol" className="phone-symbol"/><ShoppingBag size={13}/></header>{product ? <><div className="phone-product"><div className="silver-ring"/></div><div className="phone-detail"><div><h4>Lotus Ring</h4><span>925 PURE SILVER</span></div><Heart size={16}/></div><button>Add to bag</button></> : <><div className="phone-hero"><div className="silver-ring"/></div><small>NEW COLLECTION</small><h4>Stories in silver.</h4></>}</div>;
+  return (
+    <div className="phone">
+      <div className="island"/>
+      <header>
+        <Menu size={13}/>
+        <LogoAsset kind="symbol" className="phone-symbol"/>
+        <ShoppingBag size={13}/>
+      </header>
+      {product ? (
+        <>
+          <div className="phone-product">
+            <div className="hero-plate-stage">
+              <div className="silver-ring"/>
+              <img
+                src="/brand/jewellery/silver-ring.svg"
+                alt="Lotus Ring"
+                className="plate-silver-ring"
+                draggable={false}
+              />
+            </div>
+          </div>
+          <div className="phone-detail">
+            <div>
+              <h4>Lotus Ring</h4>
+              <span>925 PURE SILVER</span>
+            </div>
+            <Heart size={16}/>
+          </div>
+          <button>Add to bag</button>
+        </>
+      ) : (
+        <>
+          <div className="phone-hero">
+            <div className="hero-plate-stage">
+              <div className="silver-ring"/>
+              <img
+                src="/brand/jewellery/silver-ring.svg"
+                alt="Stories in silver"
+                className="plate-silver-ring"
+                draggable={false}
+              />
+            </div>
+          </div>
+          <small>NEW COLLECTION</small>
+          <h4>Stories in silver.</h4>
+        </>
+      )}
+    </div>
+  );
 }
 
 function MobileSlide() {
